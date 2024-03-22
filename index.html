@@ -131,7 +131,7 @@
         while (day < dayLength) {
           let weekNum = new Date(currentYear, month, day + 1).getDay()
           days[month][day] = `
-            <td class=${weekNum < 2 && 'weekend'}>
+            <td class=${(weekNum === 0 || weekNum === 6) && 'weekend'}>
               <span class='date'>${day + 1}</span>
               ${hideWeek ? '' : "<span class='week'>" + WEEK[weekNum] + '</span>'}
             </td>`
